@@ -24,7 +24,7 @@
   quick-tap-ms = <100>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+  tapping-term-ms = <250>;
 };
 
 / {
@@ -66,7 +66,7 @@
 label= "BASE"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
  bindings = <
-               &mt EXCL Q  &mt HASH W  &mt HASH F  &mt DLLR P  &mt PRCNT G     &mt CARET J  &mt AMPS L  &mt DQT U   &mt SQT Y   &mt PIPE SEMI
+               &mt EXCL Q  &mt AT W  &mt HASH F  &mt DLLR P  &mt PRCNT G     &mt CARET J  &mt AMPS L  &mt DQT U   &mt SQT Y   &mt PIPE SEMI
                &mt LCTRL A &mt LALT R  &mt LGUI S  &mt LT T    &mt LBRC D      &mt RBRC H   &mt GT N    &mt RGUI E  &mt RALT I  &mt RCTRL O
 &kp LC(LG(LALT))  &kp Z    &mt STAR X  &kp C       &mt LPAR V  &mt LBKT B      &mt RBKT K   &mt RPAR M  &kp COMMA   &kp DOT     &mt BSLH FSLH   &kp LS(LC(LG(LALT)))
                                        &kp ESC     &mt LSHIFT SPACE  &lt NAV TAB  &lt SYM RET &mt LSHIFT SPACE  &kp BSPC
