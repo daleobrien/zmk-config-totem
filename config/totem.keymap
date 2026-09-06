@@ -43,7 +43,7 @@
         bt_reset: bt_reset {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <250>;
             tap-ms = <30>;
             bindings
                 = <&out OUT_BLE>
