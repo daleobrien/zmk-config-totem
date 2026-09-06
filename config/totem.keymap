@@ -46,7 +46,7 @@
             wait-ms = <100>;
             tap-ms = <30>;
             bindings
-                = <&out OUT_BT>
+                = <&out OUT_BLE>
                 , <&bt BT_SEL 0>
                 , <&bt BT_CLR>
                 ;
