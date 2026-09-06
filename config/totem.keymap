@@ -37,23 +37,29 @@
 //    };
 
 
-//  macros {
-//        ten: ten {
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <14>;
-//            bindings
-//                = <&kp N1 &kp N0>
-//                ;
-//        };
-//    };
+    macros {
+        // Bluetooth rescue: force output to BLE, select profile 0, drop its
+        // stale bond so the keyboard starts advertising again.
+        bt_reset: bt_reset {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <100>;
+            tap-ms = <30>;
+            bindings
+                = <&out OUT_BT>
+                , <&bt BT_SEL 0>
+                , <&bt BT_CLR>
+                ;
+        };
+    };
 
    combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_bt_reset {
             timeout-ms = <50>;
             layers = <NAV>;
             key-positions = <4 5>;
-            bindings = <&bt BT_CLR_ALL>;
+            bindings = <&bt_reset>;
         };
 
     };
