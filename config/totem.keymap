@@ -55,10 +55,14 @@
 
    combos {
         compatible = "zmk,combos";
+        // Both key positions MUST live on the left (central) half: 3 = P, 4 = G.
+        // A cross-half combo is unusable as a BT rescue, because if the split
+        // link is down the right half's keypress never reaches the central and
+        // the combo can never fire -- exactly when you need it most.
         combo_bt_reset {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             layers = <NAV>;
-            key-positions = <4 5>;
+            key-positions = <3 4>;
             bindings = <&bt_reset>;
         };
 

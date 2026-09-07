@@ -27,3 +27,22 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - drag'n'drop the `totem_left-xiao_ble_nrf52840_zmk-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-xiao_ble_nrf52840_zmk-zmk.uf2` file.
 - The keymap image was generated using https://keymap-drawer.streamlit.app/ and loading the `totem.keymap` file under the 'Parse from ZMK keymap' button.
+
+## RECOVERY
+
+If the halves stop talking to each other, or a host offers CONNECT but never
+actually connects, flash the settings reset firmware. It erases the entire
+settings partition at boot: every host BLE profile, the split pairing bond and
+the saved output preference.
+
+- put **both** halves into bootloader mode (double-tap reset)
+- drag `settings_reset-xiao_ble_nrf52840_zmk-zmk.uf2` onto **one** half, then the other
+- flash the normal `totem_left` / `totem_right` UF2s back onto their respective halves
+- reset both halves at roughly the same time so they re-pair
+- "Forget This Device" on every host, then pair again
+
+The reset firmware has Bluetooth disabled on purpose, so a half running it will
+not appear in any Bluetooth device list. That is expected, not a failure.
+
+A successful UF2 flash makes the mass-storage volume eject and disappear on its
+own. If the drive is still mounted afterwards, the write did not take.

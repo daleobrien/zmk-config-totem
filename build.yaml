@@ -3,4 +3,8 @@ include:
     shield: totem_left
   - board: xiao_ble/nrf52840/zmk
     shield: totem_right
-# there is no settingsreset (needed) for the XIAO
+  # Recovery firmware: wipes the whole settings partition on boot (host BLE
+  # bonds, the split pairing bond, output preference). Board-agnostic -- it
+  # brings its own mock kscan, so it needs no totem shield.
+  - board: xiao_ble/nrf52840/zmk
+    shield: settings_reset
