@@ -27,9 +27,14 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - drag'n'drop the `totem_left-xiao_ble_nrf52840_zmk-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-xiao_ble_nrf52840_zmk-zmk.uf2` file.
 - The keymap image was generated using https://keymap-drawer.streamlit.app/ and loading the `totem.keymap` file under the 'Parse from ZMK keymap' button.
-  The same tool can be run locally, which regenerates `docs/images/keymap.svg` in place:
+  The same tool can be run locally, which regenerates `docs/images/keymap.svg` in place.
+  `docs/keymap_drawer.macos.config.yaml` is what renders the modifiers as macOS glyphs (⌘ ⌥ ⌃ ⇧)
+  rather than `GUI`/`ALT`/`CTRL`; the Streamlit app takes the same file in its config box.
+  `docs/keymap_drawer.windows-linux.config.yaml` is the Windows/Linux equivalent
+  (`Ctrl` / `Alt` / `AltGr` / `⊞`) — swap it into the `-c` flags below to render that variant.
   ```
-  uvx --from keymap-drawer keymap parse -z config/totem.keymap | uvx --from keymap-drawer keymap draw - > docs/images/keymap.svg
+  uvx --from keymap-drawer keymap -c docs/keymap_drawer.macos.config.yaml parse -z config/totem.keymap \
+    | uvx --from keymap-drawer keymap -c docs/keymap_drawer.macos.config.yaml draw - > docs/images/keymap.svg
   ```
 
 ## RECOVERY

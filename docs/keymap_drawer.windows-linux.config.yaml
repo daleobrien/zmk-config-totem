@@ -1,0 +1,124 @@
+# keymap-drawer config for the TOTEM keymap image, Windows/Linux variant.
+# Same role as keymap_drawer.macos.config.yaml, with the modifiers named
+# the way Windows and Linux name them. See readme.md for the command.
+parse_config:
+  # Modifiers applied to another keycode, e.g. &kp LC(LG(LALT)).
+  # Right Alt is AltGr here, unlike on macOS where both Alts are Option.
+  modifier_fn_map:
+    left_ctrl: "Ctrl"
+    right_ctrl: "Ctrl"
+    left_shift: "⇧"
+    right_shift: "⇧"
+    left_alt: "Alt"
+    right_alt: "AltGr"
+    left_gui: "⊞"
+    right_gui: "⊞"
+    keycode_combiner: "{mods}+{key}"
+    mod_combiner: "{mod_1}+{mod_2}"
+
+  # Plain keycodes. This key REPLACES keymap-drawer's built-in map rather than
+  # merging into it, so the stock symbol entries are restated below.
+  zmk_keycode_map:
+    # --- keymap-drawer defaults, restated because this key replaces them ---
+    EXCLAMATION: '!'
+    EXCL: '!'
+    AT_SIGN: '@'
+    AT: '@'
+    HASH: '#'
+    POUND: '#'
+    DOLLAR: $
+    DLLR: $
+    PERCENT: '%'
+    PRCNT: '%'
+    CARET: ^
+    AMPERSAND: '&'
+    AMPS: '&'
+    ASTERISK: '*'
+    ASTRK: '*'
+    STAR: '*'
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL: '='
+    PLUS: +
+    MINUS: '-'
+    UNDERSCORE: _
+    UNDER: _
+    SLASH: /
+    FSLH: /
+    QUESTION: '?'
+    QMARK: '?'
+    BACKSLASH: \
+    BSLH: \
+    PIPE: '|'
+    NON_US_BACKSLASH: \
+    PIPE2: '|'
+    NON_US_BSLH: '|'
+    SEMICOLON: ;
+    SEMI: ;
+    COLON: ':'
+    SINGLE_QUOTE: ''''
+    SQT: ''''
+    APOSTROPHE: ''''
+    APOS: ''''
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    COMMA: ','
+    LESS_THAN: <
+    LT: <
+    PERIOD: .
+    DOT: .
+    GREATER_THAN: '>'
+    GT: '>'
+    LEFT_BRACKET: '['
+    LBKT: '['
+    LEFT_BRACE: '{'
+    LBRC: '{'
+    RIGHT_BRACKET: ']'
+    RBKT: ']'
+    RIGHT_BRACE: '}'
+    RBRC: '}'
+    GRAVE: '`'
+    TILDE: '~'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    TILDE2: '~'
+    # --- Windows/Linux modifier and named-key legends ---
+    LGUI: "⊞"
+    LEFT_GUI: "⊞"
+    RGUI: "⊞"
+    RIGHT_GUI: "⊞"
+    LALT: "Alt"
+    LEFT_ALT: "Alt"
+    RALT: "AltGr"
+    RIGHT_ALT: "AltGr"
+    LCTRL: "Ctrl"
+    LEFT_CONTROL: "Ctrl"
+    RCTRL: "Ctrl"
+    RIGHT_CONTROL: "Ctrl"
+    LSHIFT: "⇧"
+    LEFT_SHIFT: "⇧"
+    RSHIFT: "⇧"
+    RIGHT_SHIFT: "⇧"
+    RET: "⏎"
+    RETURN: "⏎"
+    ENTER: "⏎"
+    TAB: "⇥"
+    ESC: "Esc"
+    ESCAPE: "Esc"
+    SPACE: "␣"
+    BSPC: "⌫"
+    BACKSPACE: "⌫"
+    DEL: "Del"
+    DELETE: "Del"
+    CAPS: "⇪"
+    CAPSLOCK: "⇪"
+    LEFT: "←"
+    DOWN: "↓"
+    UP: "↑"
+    RIGHT: "→"
+    HOME: "Home"
+    END: "End"
+    PG_UP: "PgUp"
+    PG_DN: "PgDn"
